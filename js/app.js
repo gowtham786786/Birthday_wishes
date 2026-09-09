@@ -135,6 +135,10 @@
       const memSub = document.getElementById('memorySubtitle');
       if (memSub && CFG.scene4.subtitle) memSub.textContent = CFG.scene4.subtitle;
       if (CFG.scene4.polaroidCaption) document.getElementById('polaroidCaption').textContent = CFG.scene4.polaroidCaption;
+      if (CFG.assets && CFG.assets.photoBestie) {
+        const bestiePhotoEl = document.getElementById('bestiePhoto');
+        if (bestiePhotoEl) bestiePhotoEl.src = CFG.assets.photoBestie;
+      }
       if (CFG.scene4.tickets && CFG.scene4.tickets.pass) {
         const pass = CFG.scene4.tickets.pass;
         const tagEl = document.querySelector('.romance-ticket .ticket-tag');
