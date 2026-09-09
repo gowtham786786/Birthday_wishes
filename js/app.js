@@ -162,6 +162,29 @@
       if (CFG.scene5.title) document.getElementById('reasonsTitle').textContent = CFG.scene5.title;
       if (CFG.scene5.subtitle) document.getElementById('reasonsSubtitle').textContent = CFG.scene5.subtitle;
       loadReasonCard(0);
+
+      // On deployed Vercel domain, if env.js was not statically generated, fetch from secure serverless api
+      const isDeployedHost = window.location.hostname === 'birthday-wishes-two-lovat.vercel.app' || 
+                             window.location.hostname.endsWith('.vercel.app');
+      if (isDeployedHost && (!CFG.assets.photoBestie || CFG.assets.photoBestie.includes('.svg'))) {
+        fetch('/api/env')
+          .then(res => res.json())
+          .then(data => {
+            if (data && data.PHOTO_BESTIE && !data.PHOTO_BESTIE.includes('.svg')) {
+              CFG.assets.photoBestie = data.PHOTO_BESTIE;
+              const bp = document.getElementById('bestiePhoto');
+              if (bp) bp.src = data.PHOTO_BESTIE;
+              if (CFG.scene5 && CFG.scene5.reasons) {
+                CFG.scene5.reasons.forEach((r, i) => {
+                  const k = `REASON_${i + 1}_PHOTO`;
+                  if (data[k]) r.image = data[k];
+                });
+                loadReasonCard(currentReasonIdx);
+              }
+            }
+          })
+          .catch(() => {});
+      }
     }
 
     // Scene 6 Letter

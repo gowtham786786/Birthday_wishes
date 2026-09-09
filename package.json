@@ -1,0 +1,11 @@
+{
+  "name": "dhanya-birthday-wishes",
+  "version": "1.0.0",
+  "description": "Interactive Birthday Storybook for Dhanya (Buntyyyyyyyy)",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "keywords": [],
+  "author": "Gowtham",
+  "license": "ISC"
+}

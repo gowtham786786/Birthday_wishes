@@ -14,20 +14,25 @@ A heartwarming, interactive 7-scene birthday storybook web application crafted w
 
 ---
 
-## 🔒 Personal Photo Privacy & Environment Setup
+## 🔒 Personal Photo Privacy & Deployment Setup
 
-To protect personal privacy, real personal photos are never committed to this repository.
+To protect personal privacy, real personal photos and personal URLs are **never committed to this repository**.
 
-### Quick Setup:
-1. Copy `env.example.js` to `env.js`:
-   ```bash
-   cp env.example.js env.js
-   ```
-2. Open `env.js` and specify your photos or image URLs for the 6 photo slots:
-   - `PHOTO_BESTIE`: Scene 4 polaroid memory photo
-   - `REASON_1_PHOTO` to `REASON_5_PHOTO`: The 5 photo memories revealed when flipping each card in Scene 5
-3. Alternatively, copy `.env.example` to `.env` if using a build or server tool.
-4. Launch the project using any local web server (e.g. `npx serve`, VSCode Live Server, or Python `python -m http.server 3000`).
+### 💻 Local Development & Extracted Clones:
+- When running locally (or if anyone clones/extracts this repository), the application strictly displays safe, elegant vector illustrations (`photo-bestie.svg`).
+- Personal photos are protected by domain authorization and will **never** be rendered on localhost or third-party clones.
+
+### 🚀 Vercel Production Deployment:
+1. Connect this repository to your **Vercel** account.
+2. In your Vercel Project Dashboard, navigate to **Settings** ➔ **Environment Variables**.
+3. Add the following 6 environment variables (or paste your `.env` file):
+   - `PHOTO_BESTIE`: Scene 4 polaroid memory photo URL
+   - `REASON_1_PHOTO`: Scene 5 Reason 1 card flip memory photo URL
+   - `REASON_2_PHOTO`: Scene 5 Reason 2 card flip memory photo URL
+   - `REASON_3_PHOTO`: Scene 5 Reason 3 card flip memory photo URL
+   - `REASON_4_PHOTO`: Scene 5 Reason 4 card flip memory photo URL
+   - `REASON_5_PHOTO`: Scene 5 Reason 5 card flip memory photo URL
+4. On deployment, Vercel automatically injects these private variables into the live deployed link while keeping the public GitHub repository 100% clean and free of personal media.
 
 ---
 

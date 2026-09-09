@@ -702,7 +702,14 @@
     /* ===================================================================
        REASONS DATA CONFIGURATION
        =================================================================== */
-    const _ENV = window.ENV || {};
+    // Domain & Environment Security Verification:
+    // Only authorized deployed Vercel domain can access personal photo memories.
+    // Localhost or downloaded copies strictly render default placeholder SVGs.
+    const _isAuthorizedHost = window.location.hostname === 'birthday-wishes-two-lovat.vercel.app' || 
+                              window.location.hostname.endsWith('.vercel.app');
+
+    const _ENV = (_isAuthorizedHost && window.ENV) ? window.ENV : {};
+    const _defaultPlaceholder = "assets/photo-bestie.svg";
 
     const REASONS = [
       {
@@ -710,9 +717,9 @@
         title: "We Truly Understand Each Other",
         frontEmoji: "✨",
         front3dImage: "assets/reason-front-1.jpg",
-        image: _ENV.REASON_1_PHOTO || "assets/reason-1.jpg",
+        image: (_isAuthorizedHost && _ENV.REASON_1_PHOTO) ? _ENV.REASON_1_PHOTO : _defaultPlaceholder,
         objectPosition: "center 22%",
-        fallbackImage: "assets/photo-bestie.svg",
+        fallbackImage: _defaultPlaceholder,
         text: "We understand each other without even needing words. That silent wavelength and deep connection we share is something truly rare and special."
       },
       {
@@ -720,9 +727,9 @@
         title: "Exploring New Places Together",
         frontEmoji: "✈️",
         front3dImage: "assets/reason-front-2.jpg",
-        image: _ENV.REASON_2_PHOTO || "assets/reason-2.jpg",
+        image: (_isAuthorizedHost && _ENV.REASON_2_PHOTO) ? _ENV.REASON_2_PHOTO : _defaultPlaceholder,
         objectPosition: "center 62%",
-        fallbackImage: "assets/photo-bestie.svg",
+        fallbackImage: _defaultPlaceholder,
         text: "We love visiting new places and wandering together. Every single trip and journey with you turns into an unforgettable, beautiful memory."
       },
       {
@@ -730,9 +737,9 @@
         title: "We Love Eating Together",
         frontEmoji: "🍕",
         front3dImage: "assets/reason-front-3.jpg",
-        image: _ENV.REASON_3_PHOTO || "assets/reason-3.jpg",
+        image: (_isAuthorizedHost && _ENV.REASON_3_PHOTO) ? _ENV.REASON_3_PHOTO : _defaultPlaceholder,
         objectPosition: "center 22%",
-        fallbackImage: "assets/photo-bestie.svg",
+        fallbackImage: _defaultPlaceholder,
         text: "Food just tastes a million times better when we share it together! From trying new dishes to our favorite cravings, every meal with you is pure happiness."
       },
       {
@@ -740,9 +747,9 @@
         title: "When Nothing Feels Right, We Talk",
         frontEmoji: "💬",
         front3dImage: "assets/reason-front-4.jpg",
-        image: _ENV.REASON_4_PHOTO || "assets/reason-4.jpg",
+        image: (_isAuthorizedHost && _ENV.REASON_4_PHOTO) ? _ENV.REASON_4_PHOTO : _defaultPlaceholder,
         objectPosition: "center 80%",
-        fallbackImage: "assets/photo-bestie.svg",
+        fallbackImage: _defaultPlaceholder,
         text: "Whenever life gets tough or nothing feels good, all it takes is one conversation with you to make everything better. You are my comfort and safe space."
       },
       {
@@ -750,14 +757,30 @@
         title: "Temple Visits & Endless Laughter",
         frontEmoji: "🙏",
         front3dImage: "assets/reason-front-5.jpg",
-        image: _ENV.REASON_5_PHOTO || "assets/reason-5.jpg",
+        image: (_isAuthorizedHost && _ENV.REASON_5_PHOTO) ? _ENV.REASON_5_PHOTO : _defaultPlaceholder,
         objectPosition: "center 65%",
-        fallbackImage: "assets/photo-bestie.svg",
+        fallbackImage: _defaultPlaceholder,
         text: "We love visiting the temple together for peace and blessings, and sharing our uncontrollable laughs right after. That balance of spirituality and pure fun is why we're best friends."
       }
     ];
 
     let currentIdx = 0;
+
+    // On deployed Vercel domain, if env.js was not statically generated, fetch from secure serverless api
+    if (_isAuthorizedHost && (!REASONS[0].image || REASONS[0].image.includes('.svg'))) {
+      fetch('/api/env')
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.REASON_1_PHOTO && !data.REASON_1_PHOTO.includes('.svg')) {
+            REASONS.forEach((r, i) => {
+              const k = `REASON_${i + 1}_PHOTO`;
+              if (data[k]) r.image = data[k];
+            });
+            renderReason(currentIdx);
+          }
+        })
+        .catch(() => {});
+    }
 
     // DOM Elements
     const flipCardBox = document.getElementById('flipCardBox');

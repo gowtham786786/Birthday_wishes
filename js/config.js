@@ -5,7 +5,15 @@
  * ====================================================================
  */
 
-const _ENV = window.ENV || {};
+// Domain & Environment Security Verification:
+// When anyone clones or downloads the repository and runs it on localhost/file protocol,
+// personal photos are strictly protected and never rendered (safe placeholder SVGs are shown).
+// Personal photos are ONLY accessed and displayed on the authorized deployed Vercel domain.
+const _isAuthorizedHost = window.location.hostname === 'birthday-wishes-two-lovat.vercel.app' || 
+                          window.location.hostname.endsWith('.vercel.app');
+
+const _ENV = (_isAuthorizedHost && window.ENV) ? window.ENV : {};
+const _defaultPlaceholder = "assets/photo-bestie.svg";
 
 window.BIRTHDAY_CONFIG = {
   // --- Personal Names ---
@@ -14,11 +22,10 @@ window.BIRTHDAY_CONFIG = {
   senderName: "Gowtham",
 
   // --- Photo & Graphic Assets ---
-  // Real photos in the assets/ folder load via env.js to protect privacy
   assets: {
     roseBouquet: "assets/bouquet-3d.png",
-    photoBestie: _ENV.PHOTO_BESTIE || "assets/photo-bestie.jpg",
-    photoBestieFallback: "assets/photo-bestie.svg",
+    photoBestie: (_isAuthorizedHost && _ENV.PHOTO_BESTIE) ? _ENV.PHOTO_BESTIE : _defaultPlaceholder,
+    photoBestieFallback: _defaultPlaceholder,
     albumArt: "assets/album-art.jpg",
     albumArtFallback: "assets/album-art.svg"
   },
@@ -165,8 +172,8 @@ window.BIRTHDAY_CONFIG = {
         frontEmoji: "✨",
         front3dImage: "assets/reason-front-1.jpg",
         backEmoji: "💫",
-        image: _ENV.REASON_1_PHOTO || "assets/reason-1.jpg",
-        fallbackImage: "assets/photo-bestie.svg",
+        image: (_isAuthorizedHost && _ENV.REASON_1_PHOTO) ? _ENV.REASON_1_PHOTO : _defaultPlaceholder,
+        fallbackImage: _defaultPlaceholder,
         objectPosition: "center 22%",
         text: "We understand each other without even needing words. That silent wavelength and deep connection we share is something truly rare and special."
       },
@@ -176,8 +183,8 @@ window.BIRTHDAY_CONFIG = {
         frontEmoji: "✈️",
         front3dImage: "assets/reason-front-2.jpg",
         backEmoji: "🗺️",
-        image: _ENV.REASON_2_PHOTO || "assets/reason-2.jpg",
-        fallbackImage: "assets/photo-bestie.svg",
+        image: (_isAuthorizedHost && _ENV.REASON_2_PHOTO) ? _ENV.REASON_2_PHOTO : _defaultPlaceholder,
+        fallbackImage: _defaultPlaceholder,
         objectPosition: "center 62%",
         text: "We love visiting new places and wandering together. Every single trip and journey with you turns into an unforgettable, beautiful memory."
       },
@@ -187,8 +194,8 @@ window.BIRTHDAY_CONFIG = {
         frontEmoji: "🍕",
         front3dImage: "assets/reason-front-3.jpg",
         backEmoji: "😋",
-        image: _ENV.REASON_3_PHOTO || "assets/reason-3.jpg",
-        fallbackImage: "assets/photo-bestie.svg",
+        image: (_isAuthorizedHost && _ENV.REASON_3_PHOTO) ? _ENV.REASON_3_PHOTO : _defaultPlaceholder,
+        fallbackImage: _defaultPlaceholder,
         objectPosition: "center 22%",
         text: "Food just tastes a million times better when we share it together! From trying new dishes to our favorite cravings, every meal with you is pure happiness."
       },
@@ -198,8 +205,8 @@ window.BIRTHDAY_CONFIG = {
         frontEmoji: "💬",
         front3dImage: "assets/reason-front-4.jpg",
         backEmoji: "🤍",
-        image: _ENV.REASON_4_PHOTO || "assets/reason-4.jpg",
-        fallbackImage: "assets/photo-bestie.svg",
+        image: (_isAuthorizedHost && _ENV.REASON_4_PHOTO) ? _ENV.REASON_4_PHOTO : _defaultPlaceholder,
+        fallbackImage: _defaultPlaceholder,
         objectPosition: "center 80%",
         text: "Whenever life gets tough or nothing feels good, all it takes is one conversation with you to make everything better. You are my comfort and safe space."
       },
@@ -209,8 +216,8 @@ window.BIRTHDAY_CONFIG = {
         frontEmoji: "🙏",
         front3dImage: "assets/reason-front-5.jpg",
         backEmoji: "😂",
-        image: _ENV.REASON_5_PHOTO || "assets/reason-5.jpg",
-        fallbackImage: "assets/photo-bestie.svg",
+        image: (_isAuthorizedHost && _ENV.REASON_5_PHOTO) ? _ENV.REASON_5_PHOTO : _defaultPlaceholder,
+        fallbackImage: _defaultPlaceholder,
         objectPosition: "center 65%",
         text: "We love visiting the temple together for peace and blessings, and sharing our uncontrollable laughs right after. That balance of spirituality and pure fun is why we're best friends."
       }
