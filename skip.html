@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Teddy is Crying! 🥺🧸 (Don't Skip, Buntyyyyyyyy!)</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥺</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@400;500;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      min-height: 100vh;
+      width: 100%;
+      background: radial-gradient(circle at 50% 25%, #fff0f3 0%, #fae8eb 50%, #f6d8df 100%);
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #2d1820;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 16px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient teardrops in background */
+    .teardrop-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .bg-teardrop {
+      position: absolute;
+      color: #38bdf8;
+      opacity: 0.3;
+      animation: fallDown linear infinite;
+    }
+
+    @keyframes fallDown {
+      0% {
+        transform: translateY(-30px) scale(0.8);
+        opacity: 0;
+      }
+      25% { opacity: 0.4; }
+      80% { opacity: 0.4; }
+      100% {
+        transform: translateY(105vh) scale(1.1);
+        opacity: 0;
+      }
+    }
+
+    /* Clean & Aesthetic Crying Card */
+    .crying-card {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 440px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 34px;
+      border: 2px solid rgba(244, 63, 94, 0.16);
+      box-shadow: 
+        0 24px 60px -12px rgba(225, 29, 72, 0.18),
+        0 0 70px rgba(254, 205, 211, 0.45);
+      padding: 28px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: popIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.92) translateY(20px); opacity: 0; }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
+    }
+
+    .alert-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #e11d48;
+      background: #ffe4e6;
+      padding: 5px 16px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(244, 63, 94, 0.18);
+    }
+
+    /* Realistic 3D Teddy Stage with Perspective & Natural Depth */
+    .teddy-stage {
+      position: relative;
+      width: 284px;
+      height: 274px;
+      margin: 2px auto 14px;
+      perspective: 1000px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Realistic Soft Elliptical Floor Contact Shadow */
+    .teddy-floor-shadow {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 204px;
+      height: 28px;
+      background: radial-gradient(ellipse at center, rgba(140, 70, 85, 0.44) 0%, rgba(225, 29, 72, 0.18) 44%, transparent 74%);
+      border-radius: 50%;
+      filter: blur(6px);
+      animation: floorShadowPulse 3.4s infinite ease-in-out;
+      pointer-events: none;
+      z-index: 1;
+      transition: transform 0.12s ease-out, opacity 0.25s ease;
+    }
+
+    @keyframes floorShadowPulse {
+      0%, 100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.85;
+      }
+      50% {
+        transform: translateX(-50%) scale(0.92, 0.82);
+        opacity: 0.6;
+      }
+    }
+
+    /* 3D Floating Teddy Character Container */
+    .teddy-3d-character {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
+      animation: teddy3dFloat 3.4s infinite ease-in-out;
+      cursor: pointer;
+      transition: transform 0.12s ease-out;
+      user-select: none;
+      -webkit-user-select: none;
+      outline: none;
+    }
+
+    @keyframes teddy3dFloat {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      25% {
+        transform: translateY(-8px) rotate(-1.2deg);
+      }
+      50% {
+        transform: translateY(-2px) rotate(0deg);
+      }
+      75% {
+        transform: translateY(6px) rotate(1.2deg);
+      }
+    }
+
+    /* Cutout 3D Plush Teddy Image - No Box, Real Depth */
+    .teddy-3d-cutout-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      pointer-events: auto;
+      filter: 
+        drop-shadow(0 16px 24px rgba(180, 80, 95, 0.28))
+        drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08));
+      transition: filter 0.3s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .teddy-3d-character:hover .teddy-3d-cutout-img {
+      filter: 
+        drop-shadow(0 22px 32px rgba(225, 29, 72, 0.35))
+        drop-shadow(0 6px 10px rgba(0, 0, 0, 0.12));
+    }
+
+    /* Realistic 3D Glassy Animated Teardrops */
+    .teddy-tear-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .animated-tear {
+      position: absolute;
+      width: 8px;
+      height: 13px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(186, 230, 253, 0.9) 45%, rgba(56, 189, 248, 0.8) 100%);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      box-shadow: 0 2px 6px rgba(56, 189, 248, 0.55), inset 0 1px 2px #ffffff;
+      animation: tearDrip 2.2s infinite ease-in;
+      opacity: 0;
+    }
+
+    .left-tear {
+      top: 41%;
+      left: 37.5%;
+      animation-delay: 0.1s;
+    }
+
+    .right-tear {
+      top: 41%;
+      right: 37.5%;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes tearDrip {
+      0% {
+        transform: translateY(0) scale(0.6);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.95;
+      }
+      80% {
+        opacity: 0.95;
+      }
+      100% {
+        transform: translateY(50px) scale(1.15);
+        opacity: 0;
+      }
+    }
+
+    /* Clean Simple Typography */
+    .crying-title {
+      font-family: 'Caveat', cursive;
+      font-size: 38px;
+      font-weight: 700;
+      color: #e11d48;
+      line-height: 1.15;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 10px rgba(244, 63, 94, 0.15);
+    }
+
+    .crying-subtitle {
+      font-size: 15px;
+      font-weight: 600;
+      color: #64748b;
+      line-height: 1.45;
+      margin-bottom: 22px;
+      max-width: 320px;
+    }
+
+    /* 'No, Go Back' Action Button */
+    .btn-no-go-back {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      max-width: 340px;
+      padding: 16px 22px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      background: linear-gradient(135deg, #f43f5e 0%, #be123c 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer;
+      box-shadow: 0 16px 36px -4px rgba(244, 63, 94, 0.38);
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      user-select: none;
+      text-decoration: none;
+    }
+
+    .btn-no-go-back::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -90%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(25deg);
+      animation: btnShimmerSweep 3.8s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    @keyframes btnShimmerSweep {
+      0% { left: -90%; }
+      35%, 100% { left: 140%; }
+    }
+
+    .btn-main-text {
+      font-size: 18px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-sub-text {
+      font-size: 12px;
+      opacity: 0.92;
+      font-weight: 500;
+    }
+
+    .btn-no-go-back:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 20px 44px -4px rgba(244, 63, 94, 0.48);
+    }
+
+    .btn-no-go-back:active {
+      transform: scale(0.96);
+    }
+
+    .teddy-wrapper:hover .teddy-svg {
+      animation: teddyTremble 0.5s infinite ease-in-out;
+    }
+
+    @keyframes teddyTremble {
+      0%, 100% { transform: translateY(0) rotate(0deg) scale(1.02); }
+      25% { transform: translateY(-2px) rotate(-1.5deg) scale(1.02); }
+      75% { transform: translateY(2px) rotate(1.5deg) scale(1.02); }
+    }
+
+    .fairy-cursor-sparkle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(0, 0) scale(0.6);
+      opacity: 0.95;
+      transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.3, 1), opacity 0.65s ease-out;
+      user-select: none;
+      filter: drop-shadow(0 2px 5px rgba(244, 63, 94, 0.35));
+    }
+
+    .teddy-reassurance {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #a48c96;
+      font-weight: 600;
+      animation: pulseText 2.5s infinite ease-in-out;
+    }
+
+    @keyframes pulseText {
+      0%, 100% { opacity: 0.75; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.03); }
+    }
+
+    /* Happy Celebration Overlay */
+    .happy-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 240, 243, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .happy-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .happy-teddy-3d-card {
+      width: 170px;
+      height: 170px;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 
+        0 20px 40px -10px rgba(244, 63, 94, 0.35),
+        0 0 0 4px #ffffff;
+      animation: happy3dBounce 0.75s infinite alternate cubic-bezier(0.34, 1.56, 0.64, 1);
+      margin-bottom: 14px;
+      background: #ffffff;
+    }
+
+    @keyframes happy3dBounce {
+      from { transform: translateY(0) scale(0.96); }
+      to { transform: translateY(-16px) scale(1.05); }
+    }
+
+    .happy-teddy-3d-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .happy-message {
+      font-family: 'Caveat', cursive;
+      font-size: 42px;
+      font-weight: 700;
+      color: #e11d48;
+      margin-top: 4px;
+      line-height: 1.1;
+    }
+
+    .happy-subtext {
+      font-size: 14px;
+      color: #886572;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient background teardrops -->
+  <div class="teardrop-bg" id="teardropBg"></div>
+
+  <!-- Main Crying Card -->
+  <main class="crying-card">
+    
+    <div class="alert-badge">
+      <span>🥺</span>
+      <span>NO SKIPPING ALLOWED</span>
+    </div>
+
+    <!-- Realistic 3D Crying Teddy Bear Sitting Directly on Card with Floor Shadow -->
+    <div class="teddy-stage" id="teddyStage">
+      <!-- 3D Realistic Contact Floor Shadow -->
+      <div class="teddy-floor-shadow" id="teddyFloorShadow"></div>
+
+      <!-- 3D Floating Teddy Character -->
+      <div class="teddy-3d-character" id="teddy3dCharacter" role="button" tabindex="0" aria-label="Adorable 3D Crying Teddy Bear">
+        <img src="assets/teddy-3d-cutout.png" alt="Adorable 3D Crying Teddy Bear" class="teddy-3d-cutout-img" id="teddy3dImg">
+        <div class="teddy-tear-overlay">
+          <span class="animated-tear left-tear"></span>
+          <span class="animated-tear right-tear"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Simple, Cute & Clean Message -->
+    <h1 class="crying-title">How could you skip?! 🥺💔</h1>
+    
+    <p class="crying-subtitle">
+      Buntyyyyyyyy, you made the little teddy cry! You can't skip your birthday surprises! 🧸💧
+    </p>
+
+    <!-- 'No, Go Back' Action Button -->
+    <button class="btn-no-go-back" id="goBackBtn" aria-label="No, go back to birthday surprises">
+      <span class="btn-main-text">
+        <span>🥺</span>
+        <span>No, Go Back! I'm Sorry!</span>
+        <span>🧸❤️</span>
+      </span>
+      <span class="btn-sub-text">Take me back to my birthday storybook!</span>
+    </button>
+
+    <p class="teddy-reassurance">
+      ✨ Tap above to wipe teddy's tears & return ✨
+    </p>
+
+  </main>
+
+  <!-- Happy Celebration Overlay on Return -->
+  <div class="happy-overlay" id="happyOverlay">
+    <div class="happy-teddy-3d-card">
+      <img src="assets/teddy-happy-3d.jpg" alt="Happy 3D Teddy Bear" class="happy-teddy-3d-img">
+    </div>
+    <div class="happy-message">Yay! Teddy forgives you! 🥰</div>
+    <p class="happy-subtext">Taking you back to your surprises, Buntyyyyyyyy! 💖</p>
+  </div>
+
+  <script>
+    // Generate gentle background floating teardrops
+    const teardropBg = document.getElementById('teardropBg');
+    const tearIcons = ['💧', '💧', '🥺', '💔', '💧', '✨'];
+    for (let i = 0; i < 18; i++) {
+      const drop = document.createElement('span');
+      drop.className = 'bg-teardrop';
+      drop.textContent = tearIcons[i % tearIcons.length];
+      drop.style.left = Math.random() * 100 + '%';
+      drop.style.fontSize = (Math.random() * 10 + 14) + 'px';
+      drop.style.animationDuration = (Math.random() * 4 + 4) + 's';
+      drop.style.animationDelay = (Math.random() * 5) + 's';
+      teardropBg.appendChild(drop);
+    }
+
+    // Sad chime on page load: disabled to remove synthesized tik-tik-tik audio
+    window.addEventListener('load', () => {});
+
+    // Handle "No, Go Back!" button click
+    const goBackBtn = document.getElementById('goBackBtn');
+    const happyOverlay = document.getElementById('happyOverlay');
+
+    goBackBtn.addEventListener('click', () => {
+      happyOverlay.classList.add('active');
+
+      // Burst of happy hearts on click
+      for (let i = 0; i < 14; i++) {
+        const h = document.createElement('span');
+        h.textContent = ['💖', '💕', '🥰', '✨', '🧸'][i % 5];
+        h.style.position = 'fixed';
+        h.style.left = '50%';
+        h.style.top = '50%';
+        h.style.fontSize = (Math.random() * 12 + 20) + 'px';
+        h.style.pointerEvents = 'none';
+        h.style.zIndex = '9999';
+        h.style.transition = 'all 0.8s cubic-bezier(0.2, 0.8, 0.3, 1)';
+        document.body.appendChild(h);
+
+        requestAnimationFrame(() => {
+          h.style.transform = `translate(${(Math.random() - 0.5) * 220}px, ${(Math.random() - 0.5) * 220 - 40}px) scale(1.4)`;
+          h.style.opacity = '0';
+        });
+        setTimeout(() => h.remove(), 850);
+      }
+
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 750);
+    });
+
+    // 3D Interactive Parallax Tilt & Touch Reaction with Dynamic Floor Shadow
+    const teddyStage = document.getElementById('teddyStage');
+    const teddyCharacter = document.getElementById('teddy3dCharacter');
+    const floorShadow = document.getElementById('teddyFloorShadow');
+
+    if (teddyStage && teddyCharacter) {
+      const handleMove = (clientX, clientY) => {
+        const rect = teddyStage.getBoundingClientRect();
+        const x = (clientX - rect.left - rect.width / 2) / (rect.width / 2);
+        const y = (clientY - rect.top - rect.height / 2) / (rect.height / 2);
+        
+        const clampedX = Math.max(-1, Math.min(1, x));
+        const clampedY = Math.max(-1, Math.min(1, y));
+
+        teddyCharacter.style.animationPlayState = 'paused';
+        teddyCharacter.style.transform = `rotateY(${clampedX * 18}deg) rotateX(${-clampedY * 18}deg) scale3d(1.05, 1.05, 1.05)`;
+
+        // Counter-shift floor shadow for realistic physical 3D depth
+        if (floorShadow) {
+          floorShadow.style.animationPlayState = 'paused';
+          floorShadow.style.transform = `translateX(calc(-50% + ${-clampedX * 12}px)) scale(${1 + clampedY * 0.1}, ${1 - clampedY * 0.1})`;
+        }
+      };
+
+      const handleReset = () => {
+        teddyCharacter.style.transform = '';
+        teddyCharacter.style.animationPlayState = 'running';
+        if (floorShadow) {
+          floorShadow.style.transform = '';
+          floorShadow.style.animationPlayState = 'running';
+        }
+      };
+
+      teddyStage.addEventListener('mousemove', (e) => handleMove(e.clientX, e.clientY));
+      teddyStage.addEventListener('mouseleave', handleReset);
+
+      teddyStage.addEventListener('touchmove', (e) => {
+        if (e.touches.length > 0) {
+          handleMove(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive: true });
+
+      teddyStage.addEventListener('touchend', handleReset);
+
+      // Interactive 3D Squish Bounce & Cute Sniffle Sound
+      const triggerTeddyReaction = () => {
+        // 3D Squish animation
+        teddyCharacter.style.transition = 'transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        teddyCharacter.style.transform = 'scale3d(1.12, 0.86, 1) translateY(10px)';
+        setTimeout(() => {
+          teddyCharacter.style.transition = 'transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)';
+          teddyCharacter.style.transform = 'scale3d(0.94, 1.08, 1) translateY(-14px)';
+          setTimeout(() => {
+            teddyCharacter.style.transition = 'transform 0.12s ease-out';
+            teddyCharacter.style.transform = '';
+          }, 350);
+        }, 100);
+
+
+
+        // Mini teardrop burst from teddy's eyes
+        const rect = teddyCharacter.getBoundingClientRect();
+        for (let i = 0; i < 6; i++) {
+          const tear = document.createElement('span');
+          tear.textContent = '💧';
+          tear.style.position = 'fixed';
+          tear.style.left = `${rect.left + rect.width / 2 + (Math.random() * 46 - 23)}px`;
+          tear.style.top = `${rect.top + rect.height * 0.42}px`;
+          tear.style.fontSize = `${Math.random() * 8 + 14}px`;
+          tear.style.pointerEvents = 'none';
+          tear.style.zIndex = '9999';
+          tear.style.transition = 'all 0.65s ease-out';
+          document.body.appendChild(tear);
+
+          requestAnimationFrame(() => {
+            tear.style.transform = `translate(${(Math.random() - 0.5) * 65}px, ${Math.random() * 45 + 20}px) scale(0.6)`;
+            tear.style.opacity = '0';
+          });
+          setTimeout(() => tear.remove(), 700);
+        }
+      };
+
+      teddyCharacter.addEventListener('click', triggerTeddyReaction);
+      teddyCharacter.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          triggerTeddyReaction();
+        }
+      });
+    }
+
+    // Fairy dust cursor & touch trail
+    let lastSparkleTime = 0;
+    window.addEventListener('pointermove', (e) => {
+      const now = Date.now();
+      if (now - lastSparkleTime < 50) return;
+      lastSparkleTime = now;
+
+      const sparkle = document.createElement('span');
+      sparkle.textContent = ['✨', '💖', '💧', '💫', '⭐'][Math.floor(Math.random() * 5)];
+      sparkle.className = 'fairy-cursor-sparkle';
+      sparkle.style.left = `${e.clientX}px`;
+      sparkle.style.top = `${e.clientY}px`;
+      sparkle.style.fontSize = `${Math.random() * 6 + 12}px`;
+      document.body.appendChild(sparkle);
+
+      const destX = (Math.random() - 0.5) * 36;
+      const destY = -Math.random() * 26 - 10;
+
+      requestAnimationFrame(() => {
+        sparkle.style.transform = `translate(${destX}px, ${destY}px) scale(${Math.random() * 0.4 + 0.8}) rotate(${Math.random() * 60 - 30}deg)`;
+        sparkle.style.opacity = '0';
+      });
+
+      setTimeout(() => sparkle.remove(), 650);
+    }, { passive: true });
+  </script>
+</body>
+</html>

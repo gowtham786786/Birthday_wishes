@@ -1,0 +1,26 @@
+# Environment variables and private config files
+.env
+.env.local
+.env.*.local
+env.js
+
+# Sensitive personal photos (protected from public exposure)
+assets/photo-bestie.jpg
+assets/reason-1.jpg
+assets/reason-2.jpg
+assets/reason-3.jpg
+assets/reason-4.jpg
+assets/reason-5.jpg
+
+# Python / helper scripts & caches
+__pycache__/
+*.pyc
+*.pyo
+process_teddy.py
+
+# OS / Editor temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

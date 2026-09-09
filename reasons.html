@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Why We Are Best Friends 💖 • Buntyyyyyyyy & Me</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@400;500;600;700;800&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --primary: #f43f5e;
+      --primary-dark: #be123c;
+      --primary-light: #ffe4e6;
+      --primary-glow: rgba(244, 63, 94, 0.35);
+      --bg-gradient: radial-gradient(circle at 50% 20%, #fff1f2 0%, #ffe4e6 45%, #fecdd3 100%);
+      --text-main: #2d1820;
+      --text-muted: #886572;
+      --radius-xl: 26px;
+      --radius-2xl: 34px;
+      --shadow-soft: 0 12px 36px rgba(225, 29, 72, 0.12);
+      --shadow-pop: 0 16px 40px -8px rgba(244, 63, 94, 0.32);
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      width: 100%;
+      background: var(--bg-gradient);
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient Floating Particles */
+    .ambient-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .ambient-particle {
+      position: absolute;
+      opacity: 0.35;
+      animation: floatSlow 12s infinite linear;
+      pointer-events: none;
+    }
+
+    @keyframes floatSlow {
+      0% { transform: translateY(105vh) rotate(0deg) scale(0.8); opacity: 0; }
+      20% { opacity: 0.45; }
+      80% { opacity: 0.45; }
+      100% { transform: translateY(-10vh) rotate(360deg) scale(1.1); opacity: 0; }
+    }
+
+    /* App Container */
+    .reasons-container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 480px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: var(--radius-2xl);
+      border: 2px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 
+        0 24px 64px -12px rgba(225, 29, 72, 0.22),
+        0 0 70px rgba(254, 205, 211, 0.5),
+        inset 0 0 0 1px rgba(244, 63, 94, 0.08);
+      padding: 22px 20px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: zoomIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(0.94) translateY(18px); opacity: 0; }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
+    }
+
+    /* Top Bar */
+    .top-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .btn-back-storybook {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 700;
+      background: #ffffff;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(244, 63, 94, 0.15);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
+    }
+
+    .btn-back-storybook:hover {
+      color: var(--primary);
+      transform: translateX(-2px);
+    }
+
+    .top-badge {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 5px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(244, 63, 94, 0.2);
+    }
+
+    .music-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid rgba(244, 63, 94, 0.2);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .music-btn:active {
+      transform: scale(0.9);
+    }
+
+    .music-btn.playing {
+      animation: pulseGlow 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 6px var(--primary-glow); }
+      50% { box-shadow: 0 0 16px var(--primary-glow); }
+    }
+
+    /* Header Titles */
+    .header-area {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .main-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.25;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .subtitle-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* 3D Flip Card Container */
+    .flip-card-stage {
+      width: 100%;
+      perspective: 1200px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .flip-card-box {
+      position: relative;
+      width: 100%;
+      max-width: 380px;
+      height: 440px;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .flip-card-box.flipped {
+      transform: rotateY(180deg) scale(1.02) !important;
+    }
+
+    .flip-card-box .card-face-front {
+      transform: rotateY(0deg);
+      z-index: 2;
+      transition: opacity 0.25s ease;
+    }
+
+    .flip-card-box .card-face-back {
+      transform: rotateY(180deg);
+      z-index: 1;
+      transition: opacity 0.25s ease;
+    }
+
+    .flip-card-box.flipped .card-face-front {
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .flip-card-box.flipped .card-face-back {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+
+    .flip-card-box.anim-in {
+      animation: cardSlideIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes cardSlideIn {
+      0% { opacity: 0; transform: scale(0.92) translateY(14px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-xl);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 16px 40px rgba(244, 63, 94, 0.16), 0 4px 12px rgba(0, 0, 0, 0.04);
+      border: 2px solid #ffffff;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    /* FRONT FACE: Deluxe Cover */
+    .card-face-front {
+      background: linear-gradient(150deg, #ffffff 0%, #fff0f3 60%, #ffe4e6 100%);
+      padding: 28px 24px;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .front-num-pill {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--primary);
+      background: rgba(244, 63, 94, 0.1);
+      padding: 5px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(244, 63, 94, 0.18);
+    }
+
+    .front-3d-frame {
+      position: relative;
+      width: 172px;
+      height: 172px;
+      margin: 8px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 800px;
+    }
+
+    .front-3d-shadow {
+      position: absolute;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 18px;
+      background: radial-gradient(ellipse at center, rgba(160, 80, 95, 0.35) 0%, rgba(244, 63, 94, 0.12) 45%, transparent 75%);
+      border-radius: 50%;
+      filter: blur(5px);
+      animation: frontShadowPulse 3s infinite ease-in-out;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes frontShadowPulse {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.85; }
+      50% { transform: translateX(-50%) scale(0.92, 0.82); opacity: 0.6; }
+    }
+
+    .front-3d-img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 28px;
+      box-shadow: 
+        0 14px 28px -6px rgba(225, 29, 72, 0.22),
+        0 0 0 3px #ffffff,
+        0 0 20px rgba(254, 205, 211, 0.45);
+      animation: front3dFloat 3.2s infinite ease-in-out;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+      background: #ffffff;
+    }
+
+    @keyframes front3dFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-7px) rotate(0.8deg); }
+    }
+
+    .flip-card-box:hover .front-3d-img {
+      transform: translateY(-9px) scale(1.04);
+      box-shadow: 
+        0 20px 36px -6px rgba(225, 29, 72, 0.32),
+        0 0 0 3px #ffffff,
+        0 0 28px rgba(244, 63, 94, 0.4);
+    }
+
+    .front-title-text {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-main);
+      line-height: 1.3;
+      max-width: 290px;
+    }
+
+    .front-preview-hint {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+      background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+      padding: 8px 20px;
+      border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(244, 63, 94, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* BACK FACE: Photo + Quote */
+    .card-face-back {
+      background: linear-gradient(150deg, #fff1f2 0%, #ffe4e6 100%);
+      transform: rotateY(180deg);
+      border-color: #fda4af;
+      padding: 14px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .back-photo-frame {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fecdd3;
+      border: 2.5px solid #ffffff;
+      box-shadow: 0 8px 24px rgba(244, 63, 94, 0.18);
+      flex-shrink: 0;
+    }
+
+    .back-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .flip-card-box:hover .back-photo-img {
+      transform: scale(1.03);
+    }
+
+    .back-corner-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(4px);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--primary);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    .back-quote-area {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px 6px;
+      text-align: center;
+    }
+
+    .quote-quotation-mark {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 26px;
+      line-height: 0.8;
+      color: var(--primary);
+      opacity: 0.6;
+      margin-bottom: 2px;
+    }
+
+    .back-quote-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.45;
+      font-style: italic;
+      max-width: 320px;
+    }
+
+    .back-tap-hint {
+      font-size: 11px;
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    /* Navigation Row */
+    .nav-controls-row {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .nav-arrow-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1.5px solid rgba(244, 63, 94, 0.2);
+      color: var(--primary);
+      font-size: 22px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(244, 63, 94, 0.12);
+      transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .nav-arrow-btn:hover:not(:disabled) {
+      transform: scale(1.06);
+      background: #fff1f2;
+    }
+
+    .nav-arrow-btn:active:not(:disabled) {
+      transform: scale(0.92);
+    }
+
+    .nav-arrow-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    /* Dots Indicator */
+    .dots-indicator-wrap {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .reason-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #ffd1dc;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .reason-dot.active {
+      width: 24px;
+      background: var(--primary);
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    /* Primary Bottom Action */
+    .bottom-action-wrap {
+      width: 100%;
+    }
+
+    .btn-action-primary {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #f43f5e 0%, #be123c 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-pop);
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .btn-action-primary::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -90%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(25deg);
+      animation: btnShimmerSweep 3.8s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    @keyframes btnShimmerSweep {
+      0% { left: -90%; }
+      35%, 100% { left: 140%; }
+    }
+
+    .btn-action-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 42px -4px rgba(244, 63, 94, 0.4);
+    }
+
+    .btn-action-primary:active {
+      transform: scale(0.96);
+    }
+
+    /* Fairy Dust Trail */
+    .fairy-cursor-sparkle {
+      position: fixed;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(0, 0) scale(0.6);
+      opacity: 0.95;
+      transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.3, 1), opacity 0.65s ease-out;
+      user-select: none;
+      filter: drop-shadow(0 2px 5px rgba(244, 63, 94, 0.35));
+    }
+
+    /* Confetti Canvas */
+    #confettiCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    @media (max-width: 400px) {
+      .reasons-container {
+        padding: 18px 14px 20px;
+      }
+      .flip-card-box {
+        height: 410px;
+      }
+      .back-photo-frame {
+        height: 220px;
+      }
+      .back-quote-text {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Confetti Layer -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Ambient Floating Background Particles -->
+  <div class="ambient-bg" id="ambientBg"></div>
+
+  <!-- Audio Element with Autoplay -->
+  <audio id="bgAudio" src="assets/birthday-song.mp3" autoplay loop preload="auto"></audio>
+
+  <!-- Main Showcase Container -->
+  <main class="reasons-container" role="main">
+    <!-- Top Navigation Bar -->
+    <header class="top-bar">
+      <a href="index.html?scene=5" class="btn-back-storybook" id="backStorybookBtn">
+        <span>‹ Storybook</span>
+      </a>
+      <span class="top-badge" id="reasonCounterBadge">REASON 01 OF 05</span>
+      <button class="music-btn" id="musicToggleBtn" aria-label="Toggle Birthday Music">🎵</button>
+    </header>
+
+    <!-- Header Titles -->
+    <div class="header-area">
+      <h1 class="main-title">Reasons Why We Are Best Friends 💖</h1>
+      <p class="subtitle-text">Tap the card to flip & reveal our photo memory and quote!</p>
+    </div>
+
+    <!-- 3D Interactive Flip Card -->
+    <div class="flip-card-stage">
+      <div class="flip-card-box" id="flipCardBox" role="button" tabindex="0" aria-label="Tap to flip card">
+        <!-- Front Face -->
+        <div class="card-face card-face-front" id="cardFaceFront">
+          <span class="front-num-pill" id="frontNumPill">REASON #01</span>
+          <div class="front-3d-frame" id="front3dFrame">
+            <div class="front-3d-shadow"></div>
+            <img class="front-3d-img" id="front3dImg" src="assets/reason-front-1.jpg" alt="Reason 3D Artwork">
+          </div>
+          <h2 class="front-title-text" id="frontTitle">We Truly Understand Each Other</h2>
+          <div class="front-preview-hint">
+            <span>Tap To Reveal Memory</span> <span>📸</span>
+          </div>
+        </div>
+
+        <!-- Back Face (Photo + Quote) -->
+        <div class="card-face card-face-back" id="cardFaceBack">
+          <div class="back-photo-frame">
+            <img class="back-photo-img" id="backPhotoImg" src="assets/photo-bestie.svg" alt="Dhanya & Bestie Memory">
+            <span class="back-corner-badge" id="backCornerBadge">💖 REASON #01</span>
+          </div>
+          <div class="back-quote-area">
+            <div class="quote-quotation-mark">“</div>
+            <p class="back-quote-text" id="backQuoteText">We understand each other without even needing words. That silent wavelength and deep connection we share is something truly rare and special.</p>
+          </div>
+          <div class="back-tap-hint">
+            <span>Tap again to flip back</span> <span>↺</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls Row (Prev, Dots, Next) -->
+    <div class="nav-controls-row">
+      <button class="nav-arrow-btn" id="prevBtn" aria-label="Previous reason">‹</button>
+      <div class="dots-indicator-wrap" id="dotsWrap">
+        <button class="reason-dot active" data-idx="0" aria-label="Go to reason 1"></button>
+        <button class="reason-dot" data-idx="1" aria-label="Go to reason 2"></button>
+        <button class="reason-dot" data-idx="2" aria-label="Go to reason 3"></button>
+        <button class="reason-dot" data-idx="3" aria-label="Go to reason 4"></button>
+        <button class="reason-dot" data-idx="4" aria-label="Go to reason 5"></button>
+      </div>
+      <button class="nav-arrow-btn" id="nextBtn" aria-label="Next reason">›</button>
+    </div>
+
+    <!-- Bottom Action Button -->
+    <div class="bottom-action-wrap">
+      <a href="index.html?scene=6" class="btn-action-primary" id="continueBtn">
+        <span>Read My Letter 💌 ›</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Environment Variables / Private Config (Git-ignored) -->
+  <script src="env.js" onerror="window.ENV=window.ENV||{}"></script>
+
+  <script>
+    /* ===================================================================
+       REASONS DATA CONFIGURATION
+       =================================================================== */
+    const _ENV = window.ENV || {};
+
+    const REASONS = [
+      {
+        num: "01",
+        title: "We Truly Understand Each Other",
+        frontEmoji: "✨",
+        front3dImage: "assets/reason-front-1.jpg",
+        image: _ENV.REASON_1_PHOTO || "assets/reason-1.jpg",
+        objectPosition: "center 22%",
+        fallbackImage: "assets/photo-bestie.svg",
+        text: "We understand each other without even needing words. That silent wavelength and deep connection we share is something truly rare and special."
+      },
+      {
+        num: "02",
+        title: "Exploring New Places Together",
+        frontEmoji: "✈️",
+        front3dImage: "assets/reason-front-2.jpg",
+        image: _ENV.REASON_2_PHOTO || "assets/reason-2.jpg",
+        objectPosition: "center 62%",
+        fallbackImage: "assets/photo-bestie.svg",
+        text: "We love visiting new places and wandering together. Every single trip and journey with you turns into an unforgettable, beautiful memory."
+      },
+      {
+        num: "03",
+        title: "We Love Eating Together",
+        frontEmoji: "🍕",
+        front3dImage: "assets/reason-front-3.jpg",
+        image: _ENV.REASON_3_PHOTO || "assets/reason-3.jpg",
+        objectPosition: "center 22%",
+        fallbackImage: "assets/photo-bestie.svg",
+        text: "Food just tastes a million times better when we share it together! From trying new dishes to our favorite cravings, every meal with you is pure happiness."
+      },
+      {
+        num: "04",
+        title: "When Nothing Feels Right, We Talk",
+        frontEmoji: "💬",
+        front3dImage: "assets/reason-front-4.jpg",
+        image: _ENV.REASON_4_PHOTO || "assets/reason-4.jpg",
+        objectPosition: "center 80%",
+        fallbackImage: "assets/photo-bestie.svg",
+        text: "Whenever life gets tough or nothing feels good, all it takes is one conversation with you to make everything better. You are my comfort and safe space."
+      },
+      {
+        num: "05",
+        title: "Temple Visits & Endless Laughter",
+        frontEmoji: "🙏",
+        front3dImage: "assets/reason-front-5.jpg",
+        image: _ENV.REASON_5_PHOTO || "assets/reason-5.jpg",
+        objectPosition: "center 65%",
+        fallbackImage: "assets/photo-bestie.svg",
+        text: "We love visiting the temple together for peace and blessings, and sharing our uncontrollable laughs right after. That balance of spirituality and pure fun is why we're best friends."
+      }
+    ];
+
+    let currentIdx = 0;
+
+    // DOM Elements
+    const flipCardBox = document.getElementById('flipCardBox');
+    const frontNumPill = document.getElementById('frontNumPill');
+    const front3dImg = document.getElementById('front3dImg');
+    const frontTitle = document.getElementById('frontTitle');
+    const backPhotoImg = document.getElementById('backPhotoImg');
+    const backCornerBadge = document.getElementById('backCornerBadge');
+    const backQuoteText = document.getElementById('backQuoteText');
+    const reasonCounterBadge = document.getElementById('reasonCounterBadge');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const continueBtn = document.getElementById('continueBtn');
+    const dotsWrap = document.getElementById('dotsWrap');
+    const dots = dotsWrap.querySelectorAll('.reason-dot');
+    const musicToggleBtn = document.getElementById('musicToggleBtn');
+    const bgAudio = document.getElementById('bgAudio');
+
+    // Load reason card
+    function renderReason(idx, autoFlip = false) {
+      if (idx < 0 || idx >= REASONS.length) return;
+      currentIdx = idx;
+      const r = REASONS[idx];
+
+      // Unflip card first
+      flipCardBox.style.transform = '';
+      flipCardBox.classList.remove('flipped');
+
+      setTimeout(() => {
+        reasonCounterBadge.textContent = `REASON ${r.num} OF ${String(REASONS.length).padStart(2, '0')}`;
+        frontNumPill.textContent = `REASON #${r.num}`;
+        if (front3dImg) {
+          front3dImg.src = r.front3dImage || `assets/reason-front-${idx + 1}.jpg`;
+          front3dImg.alt = `3D Artwork: ${r.title}`;
+        }
+        frontTitle.textContent = r.title;
+        backCornerBadge.textContent = `💖 REASON #${r.num}`;
+        backQuoteText.textContent = r.text;
+
+        backPhotoImg.onerror = function() {
+          this.onerror = null;
+          this.src = r.fallbackImage || 'assets/photo-bestie.svg';
+        };
+        backPhotoImg.style.objectPosition = r.objectPosition || 'center 25%';
+        backPhotoImg.src = r.image;
+
+        // Update Dots
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === idx);
+        });
+
+        // Update Buttons
+        prevBtn.disabled = idx === 0;
+        nextBtn.disabled = idx === REASONS.length - 1;
+
+        // Trigger crisp slide-in animation
+        flipCardBox.classList.remove('anim-in');
+        void flipCardBox.offsetWidth; // force reflow
+        flipCardBox.classList.add('anim-in');
+
+        if (autoFlip) {
+          setTimeout(() => {
+            flipCardBox.style.transform = '';
+            flipCardBox.classList.add('flipped');
+            spawnSparkles(flipCardBox);
+          }, 250);
+        }
+      }, 150);
+    }
+
+    // Flip Card Click Handler
+    flipCardBox.addEventListener('click', () => {
+      flipCardBox.style.transform = '';
+      flipCardBox.classList.toggle('flipped');
+      playTone(523.25, 0.12, 'triangle');
+      spawnSparkles(flipCardBox);
+    });
+
+    // Prev / Next Click Handlers
+    prevBtn.addEventListener('click', () => {
+      if (currentIdx > 0) {
+        renderReason(currentIdx - 1);
+        playTone(440, 0.1, 'sine');
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIdx < REASONS.length - 1) {
+        renderReason(currentIdx + 1);
+        playTone(523.25, 0.1, 'sine');
+      }
+    });
+
+    // Dots Click Handlers
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        renderReason(i);
+      });
+    });
+
+    // Keyboard Arrow navigation
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' && currentIdx < REASONS.length - 1) {
+        renderReason(currentIdx + 1);
+      } else if (e.key === 'ArrowLeft' && currentIdx > 0) {
+        renderReason(currentIdx - 1);
+      } else if (e.key === ' ' || e.key === 'Enter') {
+        flipCardBox.classList.toggle('flipped');
+      }
+    });
+
+    // Touch Swipe Navigation
+    let touchStartX = 0;
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+      const diffX = touchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diffX) > 50) {
+        if (diffX > 0 && currentIdx < REASONS.length - 1) {
+          renderReason(currentIdx + 1);
+        } else if (diffX < 0 && currentIdx > 0) {
+          renderReason(currentIdx - 1);
+        }
+      }
+    }, { passive: true });
+
+    // Audio Controls & Automatic Playback
+    let isPlaying = false;
+
+    function updateAudioUI(playing) {
+      isPlaying = playing;
+      if (playing) {
+        musicToggleBtn.classList.add('playing');
+        musicToggleBtn.textContent = '🎵';
+      } else {
+        musicToggleBtn.classList.remove('playing');
+        musicToggleBtn.textContent = '🔇';
+      }
+    }
+
+    bgAudio.addEventListener('play', () => updateAudioUI(true));
+    bgAudio.addEventListener('pause', () => updateAudioUI(false));
+
+    function toggleAudio() {
+      if (!bgAudio.paused) {
+        bgAudio.pause();
+      } else {
+        bgAudio.play().catch(() => {});
+      }
+    }
+    musicToggleBtn.addEventListener('click', toggleAudio);
+
+    function startAudioAutomatically() {
+      if (!bgAudio.paused) {
+        updateAudioUI(true);
+        return;
+      }
+      const playPromise = bgAudio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          updateAudioUI(true);
+        }).catch(() => {
+          // If browser policy blocks initial autoplay without gesture,
+          // attach immediate one-time listeners to start on first interaction
+          const unlock = () => {
+            if (bgAudio.paused) {
+              bgAudio.play().catch(() => {});
+            }
+            ['click', 'touchstart', 'pointerdown', 'keydown'].forEach(evt => {
+              window.removeEventListener(evt, unlock, { capture: true });
+            });
+          };
+          ['click', 'touchstart', 'pointerdown', 'keydown'].forEach(evt => {
+            window.addEventListener(evt, unlock, { capture: true, once: true });
+          });
+        });
+      }
+    }
+
+    // Trigger auto-start immediately, on DOM ready, and on page load
+    startAudioAutomatically();
+    window.addEventListener('DOMContentLoaded', startAudioAutomatically);
+    window.addEventListener('load', startAudioAutomatically);
+
+    // Web Audio Synthesizer: disabled to remove all synthesized tik-tik-tik sound effects
+    function playTone(freq, duration = 0.1, type = 'sine') {
+      return;
+    }
+
+    // Sparkle generator
+    function spawnSparkles(el) {
+      const rect = el.getBoundingClientRect();
+      const items = ['✨', '💖', '🌸', '💫'];
+      for (let i = 0; i < 6; i++) {
+        const sp = document.createElement('span');
+        sp.textContent = items[i % items.length];
+        sp.style.position = 'fixed';
+        sp.style.left = (rect.left + rect.width / 2 + (Math.random() * 120 - 60)) + 'px';
+        sp.style.top = (rect.top + rect.height / 2 + (Math.random() * 120 - 60)) + 'px';
+        sp.style.fontSize = (Math.random() * 8 + 14) + 'px';
+        sp.style.pointerEvents = 'none';
+        sp.style.zIndex = '9999';
+        sp.style.transition = 'all 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
+        sp.style.opacity = '1';
+        document.body.appendChild(sp);
+
+        requestAnimationFrame(() => {
+          sp.style.transform = `translate(${Math.random() * 80 - 40}px, ${Math.random() * -80 - 20}px) scale(1.4)`;
+          sp.style.opacity = '0';
+        });
+
+        setTimeout(() => sp.remove(), 750);
+      }
+    }
+
+    // Ambient floating items
+    const ambientBg = document.getElementById('ambientBg');
+    const floatingIcons = ['🌸', '✨', '💖', '⭐', '💫'];
+    for (let i = 0; i < 12; i++) {
+      const p = document.createElement('span');
+      p.className = 'ambient-particle';
+      p.textContent = floatingIcons[i % floatingIcons.length];
+      p.style.left = Math.random() * 100 + '%';
+      p.style.fontSize = (Math.random() * 8 + 12) + 'px';
+      p.style.animationDuration = (Math.random() * 5 + 8) + 's';
+      p.style.animationDelay = (Math.random() * 6) + 's';
+      ambientBg.appendChild(p);
+    }
+
+    // Interactive 3D Card Tilt on Hover
+    const stage = document.querySelector('.card-deck-stage');
+    if (stage) {
+      stage.addEventListener('mousemove', (e) => {
+        if (flipCardBox.classList.contains('flipped')) return;
+        const rect = stage.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const rotY = (x / (rect.width / 2)) * 8;
+        const rotX = -(y / (rect.height / 2)) * 8;
+        flipCardBox.style.transform = `rotateY(${rotY}deg) rotateX(${rotX}deg)`;
+      });
+      stage.addEventListener('mouseleave', () => {
+        if (!flipCardBox.classList.contains('flipped')) {
+          flipCardBox.style.transform = '';
+        }
+      });
+    }
+
+    // Fairy dust cursor & touch trail
+    let lastSparkleTime = 0;
+    window.addEventListener('pointermove', (e) => {
+      const now = Date.now();
+      if (now - lastSparkleTime < 50) return;
+      lastSparkleTime = now;
+
+      const sparkle = document.createElement('span');
+      sparkle.textContent = ['✨', '💖', '🌸', '💫', '⭐'][Math.floor(Math.random() * 5)];
+      sparkle.className = 'fairy-cursor-sparkle';
+      sparkle.style.left = `${e.clientX}px`;
+      sparkle.style.top = `${e.clientY}px`;
+      sparkle.style.fontSize = `${Math.random() * 6 + 12}px`;
+      document.body.appendChild(sparkle);
+
+      const destX = (Math.random() - 0.5) * 36;
+      const destY = -Math.random() * 26 - 10;
+
+      requestAnimationFrame(() => {
+        sparkle.style.transform = `translate(${destX}px, ${destY}px) scale(${Math.random() * 0.4 + 0.8}) rotate(${Math.random() * 60 - 30}deg)`;
+        sparkle.style.opacity = '0';
+      });
+
+      setTimeout(() => sparkle.remove(), 650);
+    }, { passive: true });
+
+    // Initial render
+    renderReason(0);
+  </script>
+</body>
+</html>
