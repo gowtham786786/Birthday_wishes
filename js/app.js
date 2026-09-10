@@ -164,8 +164,8 @@
       loadReasonCard(0);
 
       // On deployed Vercel domain, if env.js was not statically generated, fetch from secure serverless api
-      const isDeployedHost = window.location.hostname === 'birthday-wishes-two-lovat.vercel.app' || 
-                             window.location.hostname.endsWith('.vercel.app');
+      const isDeployedHost = window.location.hostname === 'birthday-wishes-two-lovat.vercel.app' ||
+        window.location.hostname.endsWith('.vercel.app');
       if (isDeployedHost && (!CFG.assets.photoBestie || CFG.assets.photoBestie.includes('.svg'))) {
         fetch('/api/env')
           .then(res => res.json())
@@ -183,7 +183,7 @@
               }
             }
           })
-          .catch(() => {});
+          .catch(() => { });
       }
     }
 
@@ -556,7 +556,7 @@
         launchConfettiBurst(0.5, 0.45, 40);
         spawnGaugeHearts();
         if (navigator.vibrate) {
-          try { navigator.vibrate([40, 60, 40]); } catch (e) {}
+          try { navigator.vibrate([40, 60, 40]); } catch (e) { }
         }
       }
     } else {
@@ -796,7 +796,7 @@
       cardReasonText.textContent = r.text;
 
       if (cardBackPhoto) {
-        cardBackPhoto.onerror = function() {
+        cardBackPhoto.onerror = function () {
           this.onerror = null;
           this.src = r.fallbackImage || (CFG.assets && CFG.assets.photoBestieFallback) || 'assets/photo-bestie.svg';
         };
@@ -885,7 +885,7 @@
         // If autoplay policy blocks audio until user interaction, start on next tap/click
         const unlockAudio = () => {
           if (isPlayingAudio && bgAudio && bgAudio.paused) {
-            bgAudio.play().catch(() => {});
+            bgAudio.play().catch(() => { });
           }
           ['click', 'touchstart', 'pointerdown', 'keydown'].forEach(evt => {
             window.removeEventListener(evt, unlockAudio, { capture: true });

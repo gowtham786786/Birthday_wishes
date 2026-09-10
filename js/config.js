@@ -9,8 +9,8 @@
 // When anyone clones or downloads the repository and runs it on localhost/file protocol,
 // personal photos are strictly protected and never rendered (safe placeholder SVGs are shown).
 // Personal photos are ONLY accessed and displayed on the authorized deployed Vercel domain.
-const _isAuthorizedHost = window.location.hostname === 'birthday-wishes-two-lovat.vercel.app' || 
-                          window.location.hostname.endsWith('.vercel.app');
+const _isAuthorizedHost = window.location.hostname === 'birthday-wishes-two-lovat.vercel.app' ||
+  window.location.hostname.endsWith('.vercel.app');
 
 const _ENV = (_isAuthorizedHost && window.ENV) ? window.ENV : {};
 const _defaultPlaceholder = "assets/photo-bestie.svg";
@@ -146,7 +146,6 @@ window.BIRTHDAY_CONFIG = {
   scene4: {
     badge: "SCENE 04 • MEMORY LANE",
     title: "Moments & Souvenirs 📸",
-    subtitle: "Why are the most beautiful girls born on 13th September? (Like you ❤️)",
     polaroidCaption: "Why are the most beautiful girls born on 13 Sep? (Like you ❤️)",
     tickets: {
       pass: {

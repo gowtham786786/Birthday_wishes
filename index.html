@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Happy Birthday, Buntyyyyyyyy! 🎂❤️ (Dhanya's Storybook)</title>
-  <meta name="description" content="An interactive 7-scene romantic birthday storybook for Dhanya (Buntyyyyyyyy). Made with love, smiles & sweet memories!">
-  
+  <meta name="description"
+    content="An interactive 7-scene romantic birthday storybook for Dhanya (Buntyyyyyyyy). Made with love, smiles & sweet memories!">
+
   <!-- Favicon: Heart & Cake -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
 
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +20,7 @@
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <!-- Audio Element for custom mp3 playback -->
@@ -25,7 +30,7 @@
   <canvas id="confettiCanvas"></canvas>
 
   <main class="storybook-app" id="storybookApp">
-    
+
     <!-- Ambient Dreamy Background -->
     <div class="ambient-bg" id="ambientBg">
       <!-- Soft blurred glow orbs -->
@@ -34,9 +39,9 @@
       <!-- Looping Paper Airplane -->
       <div class="paper-airplane-wrapper" aria-hidden="true">
         <svg viewBox="0 0 100 100" width="100%" height="100%">
-          <path d="M 10 50 L 90 20 L 50 85 L 42 58 Z" fill="#f43f5e" opacity="0.85"/>
-          <path d="M 42 58 L 90 20 L 50 50 Z" fill="#fda4af"/>
-          <path d="M 42 58 L 50 85 L 50 58 Z" fill="#be123c"/>
+          <path d="M 10 50 L 90 20 L 50 85 L 42 58 Z" fill="#f43f5e" opacity="0.85" />
+          <path d="M 42 58 L 90 20 L 50 50 Z" fill="#fda4af" />
+          <path d="M 42 58 L 50 85 L 50 58 Z" fill="#be123c" />
         </svg>
       </div>
     </div>
@@ -47,17 +52,21 @@
       <nav class="progress-container" id="progressContainer" aria-label="Scene progress">
         <span class="scene-step-label" id="sceneStepLabel">1/7</span>
         <button class="progress-dot active" data-scene="1" aria-label="Scene 1: Opening" title="Opening"></button>
-        <button class="progress-dot" data-scene="2" aria-label="Scene 2: Friendship Meter" title="Friendship Meter"></button>
+        <button class="progress-dot" data-scene="2" aria-label="Scene 2: Friendship Meter"
+          title="Friendship Meter"></button>
         <button class="progress-dot" data-scene="3" aria-label="Scene 3: Your Bouquet" title="Your Bouquet"></button>
         <button class="progress-dot" data-scene="4" aria-label="Scene 4: Memory Lane" title="Memory Lane"></button>
-        <button class="progress-dot" data-scene="5" aria-label="Scene 5: Why We Are Best Friends" title="Best Friends"></button>
-        <button class="progress-dot" data-scene="6" aria-label="Scene 6: A Letter From My Heart" title="Letter"></button>
+        <button class="progress-dot" data-scene="5" aria-label="Scene 5: Why We Are Best Friends"
+          title="Best Friends"></button>
+        <button class="progress-dot" data-scene="6" aria-label="Scene 6: A Letter From My Heart"
+          title="Letter"></button>
         <button class="progress-dot" data-scene="7" aria-label="Scene 7: Grand Finale" title="Finale"></button>
       </nav>
 
       <!-- Nav Actions (Music Toggle + Skip) -->
       <div class="nav-actions">
-        <button class="nav-btn music-toggle-btn" id="musicToggleBtn" aria-label="Toggle background music" title="Toggle Music">
+        <button class="nav-btn music-toggle-btn" id="musicToggleBtn" aria-label="Toggle background music"
+          title="Toggle Music">
           <span id="musicIcon">🎵</span>
         </button>
         <button class="nav-btn skip-btn" id="skipBtn" aria-label="Skip to next scene">
@@ -77,10 +86,12 @@
           <div class="cake-badge" aria-hidden="true">🎂</div>
           <span class="scene-badge" id="scene1Tag">FOR MY FAVORITE PERSON</span>
           <h1 class="landing-title" id="landingTitle">Happy Birthday, Buntyyyyyyyy 💌</h1>
-          <p class="landing-subtitle" id="landingSubtitle">A little storybook crafted with all my love, laughter & sweet memories.</p>
+          <p class="landing-subtitle" id="landingSubtitle">A little storybook crafted with all my love, laughter & sweet
+            memories.</p>
 
           <!-- Interactive Gift Envelope -->
-          <div class="envelope-wrapper" id="envelopeWrapper" role="button" tabindex="0" aria-label="Tap to open the birthday envelope">
+          <div class="envelope-wrapper" id="envelopeWrapper" role="button" tabindex="0"
+            aria-label="Tap to open the birthday envelope">
             <div class="envelope-base">
               <div class="letter-peek">
                 <span>FOR BUNTYYYYYYYY</span>
@@ -111,7 +122,7 @@
         <div class="quiz-wrapper">
           <!-- Unified Romantic Card Container -->
           <div class="meter-unified-card">
-            
+
             <!-- Question Pill & Prompt -->
             <div class="question-header">
               <div class="question-counter" id="questionCounter">QUESTION 1 OF 3</div>
@@ -128,10 +139,10 @@
                     <stop offset="100%" stop-color="#f43f5e" />
                   </linearGradient>
                   <filter id="gaugeShadow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#f43f5e" flood-opacity="0.25"/>
+                    <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#f43f5e" flood-opacity="0.25" />
                   </filter>
                 </defs>
-                
+
                 <!-- Background Arc (Radius 88, Center at 115, 120) -->
                 <path class="gauge-bg-arc" d="M 27 120 A 88 88 0 0 1 203 120" />
                 <!-- Dynamic Fill Arc -->
@@ -161,7 +172,7 @@
                   <polygon points="75,45 65,15 50,35" fill="#fda4af" />
                   <polygon points="72,40 65,22 55,35" fill="#f43f5e" />
                   <!-- Head -->
-                  <circle cx="50" cy="55" r="35" fill="#fff1f2" stroke="#fda4af" stroke-width="2"/>
+                  <circle cx="50" cy="55" r="35" fill="#fff1f2" stroke="#fda4af" stroke-width="2" />
                   <!-- Cheeks -->
                   <ellipse cx="30" cy="62" rx="6" ry="3.5" fill="#fecdd3" />
                   <ellipse cx="70" cy="62" rx="6" ry="3.5" fill="#fecdd3" />
@@ -171,7 +182,8 @@
               </div>
               <div class="mascot-speech">
                 <span class="mascot-bubble-title" id="mascotBubbleTitle">Only that much?! Unacceptable! 😭</span>
-                <span class="mascot-bubble-sub" id="mascotBubbleSub">Are you serious right now?! Drag that slider all the way up!</span>
+                <span class="mascot-bubble-sub" id="mascotBubbleSub">Are you serious right now?! Drag that slider all
+                  the way up!</span>
               </div>
             </div>
 
@@ -182,7 +194,8 @@
                 <span>50% (A lot)</span>
                 <span>100% (Besties Forever 💖)</span>
               </div>
-              <input type="range" min="0" max="100" value="0" class="custom-range" id="meterSlider" aria-label="Friendship meter slider">
+              <input type="range" min="0" max="100" value="0" class="custom-range" id="meterSlider"
+                aria-label="Friendship meter slider">
             </div>
 
           </div>
@@ -209,7 +222,9 @@
           <!-- 3D Luxury Rose Bouquet Illustration -->
           <div class="bouquet-illustration-card" id="bouquetCard" title="Tap to shower flower petals! 🌸">
             <div class="bouquet-floor-shadow"></div>
-            <img class="bouquet-img bouquet-3d-img" id="bouquetImg" src="assets/bouquet-3d.png" alt="3D Romantic Rose Bouquet for Buntyyyyyyyy" onerror="this.onerror=null; this.src='assets/rose-bouquet.svg';">
+            <img class="bouquet-img bouquet-3d-img" id="bouquetImg" src="assets/bouquet-3d.png"
+              alt="3D Romantic Rose Bouquet for Buntyyyyyyyy"
+              onerror="this.onerror=null; this.src='assets/rose-bouquet.svg';">
           </div>
 
           <!-- Staggered Popping Speech Bubbles -->
@@ -232,7 +247,6 @@
         <div class="scene-header">
           <span class="scene-badge" id="scene4Badge">SCENE 04 • OUR MEMORY LANE</span>
           <h2 class="scene-title" id="memoryTitle">Moments & Souvenirs 📸</h2>
-          <p class="scene-subtitle" id="memorySubtitle">Why are the most beautiful girls born on 13th September? (Like you ❤️)</p>
         </div>
 
         <div class="memory-container">
@@ -241,9 +255,11 @@
             <div class="washi-tape-tl"></div>
             <div class="washi-tape-br"></div>
             <div class="polaroid-photo-wrapper">
-              <img class="polaroid-photo" id="bestiePhoto" src="assets/photo-bestie.svg" alt="Buntyyyyyyyy and Me" onerror="this.onerror=null; this.src='assets/photo-bestie.svg';">
+              <img class="polaroid-photo" id="bestiePhoto" src="assets/photo-bestie.svg" alt="Buntyyyyyyyy and Me"
+                onerror="this.onerror=null; this.src='assets/photo-bestie.svg';">
             </div>
-            <p class="polaroid-caption" id="polaroidCaption">Why are the most beautiful girls born on 13 Sep? (Like you ❤️)</p>
+            <p class="polaroid-caption" id="polaroidCaption">Why are the most beautiful girls born on 13 Sep? (Like you
+              ❤️)</p>
           </div>
 
           <!-- Bestie Ticket: Bestie VIP Pass -->
@@ -270,7 +286,8 @@
           <div class="music-player-card" id="musicPlayerCard">
             <div class="player-main-row">
               <div class="player-album-art" id="playerAlbumArt">
-                <img id="albumArtImg" src="assets/album-art.jpg" alt="Album Art" onerror="this.onerror=null; this.src='assets/album-art.svg';">
+                <img id="albumArtImg" src="assets/album-art.jpg" alt="Album Art"
+                  onerror="this.onerror=null; this.src='assets/album-art.svg';">
               </div>
               <div class="player-track-info">
                 <div class="player-track-title" id="playerTrackTitle">I Thought I Saw Your Face Today</div>
@@ -308,7 +325,8 @@
         <div class="scene-header">
           <span class="scene-badge" id="scene5Badge">SCENE 05 • WHY WE ARE BEST FRIENDS</span>
           <h2 class="scene-title" id="reasonsTitle">Reasons Why We Are Best Friends 💖</h2>
-          <p class="scene-subtitle" id="reasonsSubtitle">Tap the card to flip! Use the arrows to browse all 5 reasons.</p>
+          <p class="scene-subtitle" id="reasonsSubtitle">Tap the card to flip! Use the arrows to browse all 5 reasons.
+          </p>
         </div>
 
         <div class="reasons-deck-container">
@@ -323,7 +341,8 @@
           <div class="deck-card-with-nav">
             <button class="deck-side-nav-btn prev" id="deckPrevBtn" aria-label="Previous reason">‹</button>
 
-            <div class="flip-card-wrapper" id="flipCardWrapper" role="button" tabindex="0" aria-label="Tap to flip card">
+            <div class="flip-card-wrapper" id="flipCardWrapper" role="button" tabindex="0"
+              aria-label="Tap to flip card">
               <!-- Front Face -->
               <div class="flip-card-face flip-card-front" id="cardFrontFace">
                 <span class="card-num-tag" id="cardNumTag">REASON #01</span>
@@ -340,11 +359,13 @@
               <!-- Back Face -->
               <div class="flip-card-face flip-card-back" id="cardBackFace">
                 <div class="card-back-photo-wrapper" id="cardBackPhotoWrapper">
-                  <img class="card-back-photo" id="cardBackPhoto" src="assets/photo-bestie.svg" alt="Reason Memory Photo">
+                  <img class="card-back-photo" id="cardBackPhoto" src="assets/photo-bestie.svg"
+                    alt="Reason Memory Photo">
                   <span class="card-back-badge" id="cardBackEmoji">💫</span>
                 </div>
                 <div class="card-back-content">
-                  <p class="card-reason-text" id="cardReasonText">We understand each other without even needing words. That silent wavelength and deep connection we share is something truly rare and special.</p>
+                  <p class="card-reason-text" id="cardReasonText">We understand each other without even needing words.
+                    That silent wavelength and deep connection we share is something truly rare and special.</p>
                 </div>
                 <div class="card-flip-back-hint">Tap again to flip back ↺</div>
               </div>
@@ -388,7 +409,8 @@
             <!-- Cute Cat hugging Heart Sticker in corner -->
             <svg class="mascot-heart-sticker" viewBox="0 0 100 100" aria-hidden="true">
               <!-- Giant Heart -->
-              <path d="M 50 85 C 20 60 5 40 18 22 C 30 5 45 15 50 25 C 55 15 70 5 82 22 C 95 40 80 60 50 85 Z" fill="#f43f5e" />
+              <path d="M 50 85 C 20 60 5 40 18 22 C 30 5 45 15 50 25 C 55 15 70 5 82 22 C 95 40 80 60 50 85 Z"
+                fill="#f43f5e" />
               <!-- Cat Ears -->
               <polygon points="32,25 38,8 48,22" fill="#fda4af" />
               <polygon points="68,25 62,8 52,22" fill="#fda4af" />
@@ -397,12 +419,12 @@
               <!-- Cat Face -->
               <circle cx="45" cy="27" r="2" fill="#881337" />
               <circle cx="55" cy="27" r="2" fill="#881337" />
-              <path d="M 48 31 Q 50 33 52 31" stroke="#881337" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M 48 31 Q 50 33 52 31" stroke="#881337" stroke-width="1.5" fill="none" stroke-linecap="round" />
               <ellipse cx="42" cy="29" rx="3" ry="1.5" fill="#fecdd3" />
               <ellipse cx="58" cy="29" rx="3" ry="1.5" fill="#fecdd3" />
               <!-- Paws on heart -->
-              <ellipse cx="38" cy="45" rx="5" ry="4" fill="#fff1f2" stroke="#fda4af" stroke-width="1"/>
-              <ellipse cx="62" cy="45" rx="5" ry="4" fill="#fff1f2" stroke="#fda4af" stroke-width="1"/>
+              <ellipse cx="38" cy="45" rx="5" ry="4" fill="#fff1f2" stroke="#fda4af" stroke-width="1" />
+              <ellipse cx="62" cy="45" rx="5" ry="4" fill="#fff1f2" stroke="#fda4af" stroke-width="1" />
             </svg>
           </article>
         </div>
@@ -419,11 +441,13 @@
            ========================================== -->
       <section class="scene-card" id="scene7" data-index="7" aria-labelledby="finaleTitle">
         <div class="finale-card">
-          <div class="finale-cake-badge" id="finaleCakeBadge" role="button" tabindex="0" title="Tap cake to make a wish!" aria-label="Birthday cake - tap to make a wish">🎂</div>
+          <div class="finale-cake-badge" id="finaleCakeBadge" role="button" tabindex="0"
+            title="Tap cake to make a wish!" aria-label="Birthday cake - tap to make a wish">🎂</div>
           <div class="cake-wish-hint" id="cakeWishHint">✨ Tap cake to make a wish! ✨</div>
           <span class="scene-badge" id="scene7Badge">SCENE 07 • HAPPY BIRTHDAY</span>
           <h2 class="finale-title" id="finaleTitle">Happy Birthday, Buntyyyyyyyy! 🎂❤️</h2>
-          <div class="finale-closing" id="finaleClosing">🎉 Today, you are legally excused from doing anything you don't want to do. Go eat cake and smile! 🍰✨</div>
+          <div class="finale-closing" id="finaleClosing">🎉 Today, you are legally excused from doing anything you don't
+            want to do. Go eat cake and smile! 🍰✨</div>
 
           <div class="finale-actions">
             <button class="btn-primary" id="finaleConfettiBtn">
@@ -446,4 +470,5 @@
   <script src="js/config.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>
